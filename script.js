@@ -5,6 +5,9 @@
 // con difficoltà 3 => tra 1 e 49
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
+
+// Creo una funzione per creare 100 celle con un ciclo che parte da 1 e finisce a 100, uso lo stesso ciclo per
+// prendere la i e metterla come id alla cella appena creata.
 const createCell = (cellmax, docGrid) => {
     grid.innerHTML = "";
     for (let i = 1; i <= cellmax; i++) {
