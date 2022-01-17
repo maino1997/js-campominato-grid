@@ -5,13 +5,13 @@
 // con difficoltà 3 => tra 1 e 49
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
-const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
+const createCell = (cellmax, docGrid) => {
     grid.innerHTML = "";
-    for (let i = cellmin; i <= cellmax; i++) {
+    for (let i = 1; i <= cellmax; i++) {
         const newCell = document.createElement('div');
-        newCell.append(gotNumber[i]);
+        newCell.append(i);
         newCell.classList.add("cell");
-        newCell.id = gotNumber[i];
+        newCell.id = (i);
 
         if (cellmax == 100) {
             newCell.classList.add("cell-10");
@@ -30,16 +30,17 @@ const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
 }
 
 
-const getIdNumber = (min, max) => {
-    const idList = [];
-    let cellId = 0;
+// const getIdNumber = (min, max) => {
+//     const idList = [];
+//     let cellId = 0;
 
-    for (let i = min; i <= max; i++) {
-        cellId = i;
-        idList.push(cellId);
-    }
-    return idList;
-}
+//     for (let i = min; i <= min + max; i++) {
+//         cellId = i;
+//         idList.push(cellId);
+//     }
+//     console.log(idList);
+//     return idList;
+// }
 
 
 const userLevel = document.getElementById("select");
@@ -59,7 +60,7 @@ genBtn.addEventListener('click', () => {
 
 
 
-    createCell(1, userChoice, grid, getIdNumber(0, userChoice));
+    createCell(userChoice, grid);
 
 });
 
