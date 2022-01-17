@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+}
+
+main{
+    background-color: rgb(255, 0, 64);
+    padding-top: 50px;
+}
+
 
 .cell {
     border: 1px red solid;
@@ -25,7 +37,7 @@
 }
 
 #grid-container{
-    border: 1px solid blue;
+    border: 1px solid green;
     display: flex;
     flex-wrap: wrap;
     height: 500px;
