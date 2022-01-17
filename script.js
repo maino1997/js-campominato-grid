@@ -6,12 +6,12 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
+    grid.innerHTML = "";
     for (let i = cellmin; i <= cellmax; i++) {
         const newCell = document.createElement('div');
         newCell.append(gotNumber[i]);
-        docGrid.appendChild(newCell);
-        newCell.id = gotNumber[i];
         newCell.classList.add("cell");
+        newCell.id = gotNumber[i];
 
         if (cellmax == 100) {
             newCell.classList.add("cell-10");
@@ -22,8 +22,10 @@ const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
         }
 
         newCell.addEventListener('click', () => {
-            newCell.classList.add("bg-blue");
+            newCell.classList.toggle("bg-blue");
         });
+
+        docGrid.appendChild(newCell);
     }
 }
 
@@ -59,12 +61,7 @@ genBtn.addEventListener('click', () => {
 
     createCell(1, userChoice, grid, getIdNumber(0, userChoice));
 
-
 });
-
-
-
-
 
 
 

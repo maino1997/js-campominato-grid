@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 header{
@@ -9,16 +10,23 @@ header{
     justify-content: space-between;
     height: 50px;
     line-height: 50px;
+    padding: 0 20px 0 20px;
 }
 
 main{
     background-color: rgb(255, 0, 64);
     padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
 }
 
 
 .cell {
-    border: 1px red solid;
+    border: 1px white solid;
 }
 
 .cell-10{
@@ -37,7 +45,7 @@ main{
 }
 
 #grid-container{
-    border: 1px solid green;
+    border: 1px solid white;
     display: flex;
     flex-wrap: wrap;
     height: 500px;
