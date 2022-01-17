@@ -5,48 +5,65 @@
 // con difficoltà 3 => tra 1 e 49
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
+const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
+    for (let i = cellmin; i < cellmax; i++) {
+        const newCell = document.createElement('div');
+        newCell.append(gotNumber[i]);
+        docGrid.appendChild(newCell);
+        newCell.id = gotNumber[i];
+        newCell.classList.add("cell");
+        if (cellmax == 100) {
+            newCell.classList.add("cell-10");
+        } else if (cellmax == 81) {
+            newCell.classList.add("cell-8");
+        } else {
+            newCell.classList.add("cell-5");
+        }
+
+        newCell.addEventListener('click', () => {
+            newCell.classList.add("bg-blue");
+        });
+    }
+}
+
+
+const getIdNumber = (min, max) => {
+    const idList = [];
+    let cellId = 0;
+
+    for (let i = min; i < max; i++) {
+        cellId = i;
+        idList.push(cellId);
+    }
+    return idList;
+}
+
+
 const userLevel = document.getElementById("select");
 const genBtn = document.getElementById("generate");
 const grid = document.getElementById("grid-container");
 
+
 genBtn.addEventListener('click', () => {
     let userChoice = userLevel.value;
     if (userChoice === "1") {
-        userChoice = 101;
+        userChoice = 100;
     } else if (userChoice === "2") {
-        userChoice = 82;
+        userChoice = 81;
     } else {
-        userChoice = 50;
+        userChoice = 49;
     }
 
 
-    const createCell = (cellmin, cellmax, docGrid, gotNumber) => {
-        for (let i = cellmin; i < cellmax; i++) {
-            const newCell = document.createElement('div');
-            newCell.append(gotNumber[i]);
-            docGrid.appendChild(newCell);
-            newCell.id = gotNumber[i];
-            newCell.classList.add("cell");
-        }
-    }
-
-
-    const getIdNumber = (min, max) => {
-        const idList = [];
-        let cellId = 0;
-
-        for (let i = min; i < max; i++) {
-            cellId = i;
-            idList.push(cellId);
-        }
-        return idList;
-    }
 
     createCell(0, userChoice, grid, getIdNumber(1, userChoice));
 
-    // console.log(getIdNumber(1, userChoice));
 
 });
+
+
+
+
 
 
 

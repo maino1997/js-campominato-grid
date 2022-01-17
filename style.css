@@ -6,13 +6,29 @@
 
 
 .cell {
+    border: 1px red solid;
+}
+
+.cell-10{
     height: calc(100% / 10);
     width: calc(100% / 10);
-    border: 1px red solid;
+}
+
+.cell-8{
+    height: calc(100% / 9) ;
+    width: calc(100% / 9) ;
+}
+
+.cell-5{
+    height: calc(100% / 7);
+    width: calc(100% / 7);
 }
 
 #grid-container{
     border: 1px solid blue;
     display: flex;
     flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+    margin: auto;
 }
